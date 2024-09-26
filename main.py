@@ -1,9 +1,6 @@
 from fastapi import FastAPI, Depends
-from pydantic import BaseModel
-from typing import Optional, Annotated
 from contextlib import asynccontextmanager
 from database import create_tables, delete_tables
-from schemas import STaskAdd
 from router import router, users_router, tasks_router
 
 
