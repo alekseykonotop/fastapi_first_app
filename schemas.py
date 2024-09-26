@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Optional
 
 
@@ -10,6 +10,8 @@ class STask(STaskAdd):
     id: int
     name: str
     description: Optional[str] = None
+
+    model_config = ConfigDict(from_attributes=True)
 
 class STaskId(BaseModel):
     ok: bool = True
@@ -29,6 +31,8 @@ class SUser(SUserAdd):
     login: str
     age: int
     phone: Optional[str] = None
+
+    model_config = ConfigDict(from_attributes=True)
 
 class SUserId(BaseModel):
     ok: bool = True
